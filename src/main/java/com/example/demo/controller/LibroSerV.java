@@ -27,7 +27,7 @@ public class LibroSerV {
 	@PostMapping("/alumno")
 	public ResponseEntity<Libro> save(@RequestBody Libro alum){
 		try {
-			Libro al = libroservice.create(new Libro(alum.getIdlibro(),alum.getTitulo(),alum.getPaginas(),alum.getDescripcion()));
+			Libro al = libroservice.create(alum);
 			
 			return new ResponseEntity<>(al, HttpStatus.CREATED);
 		} catch (Exception e) {
